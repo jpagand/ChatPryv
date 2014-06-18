@@ -96,6 +96,7 @@ angular.module('chatPryvApp.chat', [])
                 sockets[conv.token] = socket;
                 _storage.save('conversations', conversations);
                 $rootScope.$broadcast('change:conversation');
+                $rootScope.$broadcast('success:conversation');
 
                 socket.on('eventsChanged', function () {
                   _syncGetMessages(conv);
@@ -119,6 +120,8 @@ angular.module('chatPryvApp.chat', [])
             console.warn('Connection error:', e);
           });
         });
+      } else {
+        $rootScope.$broadcast('fail:conversation', 'already_exist');
       }
     }
     var removeConversation = function (param) {

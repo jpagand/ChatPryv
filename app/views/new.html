@@ -15,5 +15,5 @@
     <label for="pass">Name</label>
     <input ng-model="newConv.name" type="text" class="form-control" id="pass" placeholder="Give a name to this conversation" required>
   </div>
-  <button ng-click="addConv()" class="btn btn-default">Submit</button>
+  <button ng-click="addConv()" class="btn btn-default" ng-disabled="disable">Submit</button>
 </form>
