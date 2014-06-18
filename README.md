@@ -3,6 +3,8 @@ Chat Pryv
 
 This a basic chat using Pryv and an AES end to end ecryption
 
+[Demo](http://jpagand.github.io/ChatPryv)
+
 Instructions
 ============
 
