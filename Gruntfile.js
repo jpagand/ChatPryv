@@ -297,6 +297,27 @@ module.exports = function (grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
+      ghPages: {
+        files: [{
+          expand: true,
+          cwd: 'app/',
+          src: '**',
+          dest: 'dist/'
+        },{
+          expand: true,
+          cwd: 'bower_components/',
+          src: '**',
+          dest: 'dist/bower_components'
+        },
+        {
+          expand: true,
+          flatten: true,
+          filter: 'isFile',
+           src: 'app/index.html',
+          dest: 'dist/'
+         }
+        ]
+      },
       dist: {
         files: [{
           expand: true,
@@ -341,7 +362,6 @@ module.exports = function (grunt) {
       ],
       dist: [
         'copy:styles',
-        'imagemin',
         'svgmin'
       ]
     },
@@ -405,5 +425,8 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+  grunt.registerTask('ghpages', [
+    'copy:ghPages'
   ]);
 };
