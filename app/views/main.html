@@ -1,0 +1,14 @@
+<div id="conversations-list">
+  <li class="col-xs-12" ng-repeat="conv in conversations">
+    <a ng-href="#/conversation/{{conv.token}}"><div class="conv-name">{{ conv.name}}</div></a>
+  </li>
+</div>
+
+<div class="jumbotron" ng-show="!conversations.length">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    You don't have conversation yet.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/new"><span class="fa fa-plus fa-lg"></span> Add new!</a></p>
+</div>
+

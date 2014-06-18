@@ -1,0 +1,19 @@
+<form role="form">
+  <div class="form-group">
+    <label for="host">Host</label>
+    <input ng-model="newConv.host" type="text" class="form-control" id="host" placeholder="Enter the host name" required>
+  </div>
+  <div class="form-group">
+    <label for="token">Token</label>
+    <input ng-model="newConv.token" type="text" class="form-control" id="token" placeholder="Enter the token" required>
+  </div>
+  <div class="form-group">
+    <label for="pass">Pass</label>
+    <input ng-model="newConv.pass" type="password" class="form-control" id="pass" placeholder="Enter the passphrase to encrypt your messages" required>
+  </div>
+  <div class="form-group">
+    <label for="pass">Name</label>
+    <input ng-model="newConv.name" type="text" class="form-control" id="pass" placeholder="Give a name to this conversation" required>
+  </div>
+  <button ng-click="addConv()" class="btn btn-default">Submit</button>
+</form>
