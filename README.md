@@ -5,6 +5,14 @@ This a basic chat using Pryv and an AES end to end ecryption
 
 [Demo](http://jpagand.github.io/ChatPryv)
 
+**Demo conversation**
+
+```
+host: jordane
+token: chwl1gmlp01yzjypn993ecobz
+pass: pryv
+```
+
 Instructions
 ============
 
