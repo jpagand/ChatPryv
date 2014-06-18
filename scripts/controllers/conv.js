@@ -8,9 +8,15 @@
  * Controller of the chatPryvApp
  */
 angular.module('chatPryvApp.conv', [])
-  .controller('ConvCtrl', ['$scope', 'Chat','$routeParams', function ($scope, Chat, $routeParams) {
+  .controller('ConvCtrl', ['$scope', 'Chat','$routeParams', '$location', function ($scope, Chat, $routeParams, $location) {
     Chat.init();
     $scope.conv = Chat.getConversation($routeParams.convId);
+    if (!$scope.conv) {
+      $location.path('/');
+      if(!$scope.$$phase) {
+        $scope.$apply();
+      }
+    }
     $scope.messages = Chat.getMessages($routeParams.convId);
     $scope.$on('change:message', function () {
       $scope.messages= Chat.getMessages($routeParams.convId);
