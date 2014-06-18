@@ -1,5 +1,5 @@
 <div id="conversations-list">
-  <li class="col-xs-12" ng-repeat="conv in conversations">
+  <li class="col-xs-12" ng-repeat="conv in conversations  track by $index">
     <a ng-href="#/conversation/{{conv.token}}"><div class="conv-name">{{ conv.name}}</div></a>
   </li>
 </div>
