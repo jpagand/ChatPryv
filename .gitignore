@@ -1,8 +1,0 @@
-node_modules
-dist
-.tmp
-.sass-cache
-.editconfig
-.jshintrc
-.idea/
-bower_components
