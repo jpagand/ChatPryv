@@ -1,15 +1,19 @@
-<div class="page-header" id="conversation-header"><h2>{{ conv.name }}</h2></div>
-<div id="conversation">
-  <li ng-repeat='mess in messages track by $index'>
+<div id="conversation-header" class="col-xs-12"><div ng-click="showMore=!!!showMore" class="col-xs-10"><span>{{ conv.name }} </span><i class="fa fa-cog fa-fw"></i></div>
+  <div id="conv-more" class="col-xs-2" ng-show="showMore">
+    <button class="btn btn-danger" ng-click="delete(conv)">Delete</button>
+  </div>
+</div>
+<div id="conversation" class="container col-xs-11">
+  <li ng-repeat='mess in messages track by $index' class="col-xs-12">
     <div class="message-content" marked="mess.message">{{ mess.message }}</div>
     <div class="message-time" am-time-ago="mess.time" am-preprocess="unix"></div>
   </li>
 </div>
-<div id="new-message">
+<div id="new-message" class="container">
   <form ng-submit="addMessage()">
-    <div class="form-group">
+    <div class="form-group col-xs-9">
       <input ng-model="newMess" type="text" class="form-control" placeholder="Enter your message" required>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-fw"></i></button>
   </form>
 </div>

@@ -118,3 +118,21 @@ body {
   font-size: 0.7em;
   color: #949494;
 }
+
+#new-message {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#conversation {
+  position: absolute;
+  bottom: 50px;
+  top: 110px;
+  overflow: auto;
+}
+
+#conversation-header span {
+  font-size: 1.7em;
+  font-weight: 700;
+}
