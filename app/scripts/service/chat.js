@@ -133,8 +133,8 @@ angular.module('chatPryvApp.chat', [])
         _storage.save('messages', messages);
         delete messToSync[token];
         _storage.save('messToSync', messToSync);
+        $rootScope.$broadcast('change:conversation');
       }
-      // TODO broadcast app
     }
 
     var getConversation = function (token) {

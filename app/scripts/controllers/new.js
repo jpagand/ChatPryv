@@ -18,16 +18,20 @@ angular.module('chatPryvApp.new', [])
     $scope.$on('success:conversation', function () {
        $scope.disable = false;
       $location.path('/');
-      if(!$scope.$$phase) {
-        $scope.$apply();
-      }
+      setTimeout(function () {
+        if(!$scope.$$phase) {
+          $scope.$apply();
+        }
+      }, 0);
     });
 
     $scope.$on('fail:conversation', function () {
        $scope.disable = false;
-      if(!$scope.$$phase) {
-        $scope.$apply();
-      }
+      setTimeout(function () {
+        if(!$scope.$$phase) {
+          $scope.$apply();
+        }
+      }, 0);
     });
 
   }]);

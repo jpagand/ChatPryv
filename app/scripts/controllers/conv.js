@@ -20,13 +20,28 @@ angular.module('chatPryvApp.conv', [])
     $scope.messages = Chat.getMessages($routeParams.convId);
     $scope.$on('change:message', function () {
       $scope.messages= Chat.getMessages($routeParams.convId);
-      if(!$scope.$$phase) {
-        $scope.$apply();
-      }
+      setTimeout(function () {
+        if(!$scope.$$phase) {
+          $scope.$apply();
+          $('#conversation').scrollTop($('#conversation')[0].scrollHeight);
+        }
+      }, 0);
     });
     $scope.addMessage = function () {
       Chat.addMessage($scope.conv, $scope.newMess);
       $scope.newMess = null;
     }
+    $scope.delete = function (conv) {
+      Chat.removeConversation(conv);
+      $location.path('/');
+      setTimeout(function () {
+        if(!$scope.$$phase) {
+          $scope.$apply();
+        }
+      }, 0);
+    }
+    setTimeout(function () {
+      $('#conversation').scrollTop($('#conversation')[0].scrollHeight);
+    }, 0);
 
   }]);
