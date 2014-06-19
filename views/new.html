@@ -1,3 +1,11 @@
+<div class="alert alert-info fade in">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <p><strong>To create a new conversation</strong>, go to <a href="https://pryv.me" target="_blank">your Pryv</a> and create a sharing with a <strong>contribute permission.</strong></p>
+  <p>Use this token to create the conversation, and choose a password to <strong>encrypt</strong> the messages.</p>
+  <p>Share those information with your friends and start chatting. OR:</p>
+  <p class="btn btn-default" ng-click='newConv={host: "jordane", pass: "pryv", token: "chwl1gmlp01yzjypn993ecobz", name: "Demo"}'><strong>Add a demo account</strong></p>
+</div>
+
 <form role="form">
   <div class="form-group">
     <label for="host">Host</label>
@@ -13,7 +21,7 @@
   </div>
   <div class="form-group">
     <label for="pass">Name</label>
-    <input ng-model="newConv.name" type="text" class="form-control" id="pass" placeholder="Give a name to this conversation" required>
+    <input ng-model="newConv.name" type="text" class="form-control" id="name" placeholder="Give a name to this conversation" required>
   </div>
   <button ng-click="addConv()" class="btn btn-default" ng-disabled="disable">Submit</button>
 </form>
